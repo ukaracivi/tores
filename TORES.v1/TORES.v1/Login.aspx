@@ -9,9 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:Label ID="Label1" runat="server" Text="Kullanıcı Adı :"></asp:Label>
+        <asp:Label ID="lbelKulAd" runat="server" Text="Kullanıcı Adı :"></asp:Label>
         <asp:TextBox ID="tboxKulAd" runat="server" MaxLength="10" Width="156px"></asp:TextBox><br />
-        <asp:Label ID="Label2" runat="server" Text="Kullanıcı Şifre : "></asp:Label>
+        <asp:Label ID="lbelKulSifre" runat="server" Text="Kullanıcı Şifre : "></asp:Label>
         <asp:TextBox ID="tboxKulSifre" runat="server" MaxLength="10" TextMode="Password" ToolTip="Şifreyi Giriniz" Width="92px"></asp:TextBox><br />
         <br />
         <br />
