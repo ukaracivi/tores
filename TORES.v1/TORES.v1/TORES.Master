@@ -11,9 +11,10 @@
     <div>
         <asp:Table ID="tablTORESMain" runat="server" Width="100%" Height="510px">
 
-            <asp:TableRow Height="20%" BackColor="PaleGreen">
+            <asp:TableRow Height="20%" BackColor="PaleGreen" VerticalAlign="Top">
                 <asp:TableCell>
-                    &nbsp;Header
+                    <asp:Label ID="lbelBaslik" runat="server" Text="Label"></asp:Label>
+
                 </asp:TableCell>
             </asp:TableRow>
 

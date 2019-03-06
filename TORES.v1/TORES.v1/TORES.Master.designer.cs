@@ -31,6 +31,15 @@ namespace TORES.v1 {
         protected global::System.Web.UI.WebControls.Table tablTORESMain;
         
         /// <summary>
+        /// lbelBaslik control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbelBaslik;
+        
+        /// <summary>
         /// tablOrta control.
         /// </summary>
         /// <remarks>

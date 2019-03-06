@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace TORES.v1
 {
@@ -31,12 +32,11 @@ namespace TORES.v1
 
             SqlConnection connLocal = new SqlConnection();
 
-            connLocal.ConnectionString = "Data Source=302--00; Initial Catalog=TORESv1; User ID=sa; Password=1234;";
-//            connLocal.ConnectionString = connStr_Local;
+            connLocal.ConnectionString =ConfigurationManager.AppSettings["ConnStr"].ToString();
 
             connLocal.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM datPersonel WHERE PersUID='" + kulad + "' AND PersPass='" + kulsifre + "'", connLocal);
+            SqlCommand cmd = new SqlCommand("SELECT PersID,PersAd,PersSoyad FROM datPersonel WHERE PersUID='" + kulad + "' AND PersPass='" + kulsifre + "'", connLocal);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -46,9 +46,12 @@ namespace TORES.v1
 
             if (dt.Rows.Count > 0)
             {
+                clsUser user = new clsUser();
 
+                user.PersID = Convert.ToInt32(dt.Rows[0][0].ToString());
+                user.PersAd = dt.Rows[0][1].ToString();
+                user.PersSoyad = dt.Rows[0][2].ToString();
                 Server.Transfer("Default.aspx");
-
 
             }
             else
